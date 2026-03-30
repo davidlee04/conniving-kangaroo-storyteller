@@ -17,12 +17,15 @@ Phase 1: Crime Backstory Generation
         ↓  (CrimeDetails dataclass)
 Phase 2a: Character Generation (detective, criminal, 3 suspects)
         ↓  (Character dataclasses)
+        ↓  (Character validation)
 Phase 2b: Clue Generation (4 genuine + 2 red herrings)
         ↓  (Clue dataclasses)
-Phase 3: Iterative Suspense Loop × 15 iterations
+        ↓  (Clue validation)
+Phase 3: Meta Controller: Iterative Suspense Loop × 15 iterations
         ↓  Each iteration:
            Stage A prompt → detective's next action
            Stage B prompt → obstacle that blocks success (suspense rises)
+           → Plot point validation / retry mechanism
            → PlotPoint dataclass stored in StoryWorld
         ↓  (StoryWorld with 15 PlotPoints)
 Phase 4: Consistency Check + Final Narrative Assembly
@@ -101,6 +104,7 @@ You will need to use a paid tier because the free tier only allows for 20 reques
 | Suspense arc                 | `suspense_score` rises 0.15 → 0.98 monotonically across all plot points |
 
 ## Example Outputs
+
 - Please see `Example Story.txt` for an example story
 - Please see `Example Story Plot Points.txt` for the plot points the system generated for this story
 - Please see `Example Story Annotated.md` for the story annotated with its plot points
