@@ -1,110 +1,161 @@
-# Conniving Kangaroo Storyteller
+# ClueLLM
 
-**Team:** Conniving Kangaroo | **Course:** CS 7634 @ Georgia Tech
-**Template:** Template 1 — Suspense Generation (Iterative Prompting Meta-Controller)
-**System Name:** ClueLLM — An iterative LLM-driven crime mystery generator
+**Team:** Conniving Kangaroo &nbsp;|&nbsp; **Course:** CS 7634 (Georgia Tech)
+**System name:** ClueLLM
+**Phase II project template:** Template 1 — Search-Based Drama Management
+**Members:** Devam Shrivastava, Chaeyoung Lee, David Lee
 
 ---
 
-## System Overview
+## What this is
 
-ClueLLM generates a crime mystery story using an **Iterative Prompting Meta-Controller** pattern. An external Python control loop guides Gemini through distinct phases, building structured story state at each step before passing it as context to the next prompt. The LLM never produces free-form output without structure — every response is parsed into a typed dataclass before use.
+ClueLLM turns a Phase I generated crime mystery into a **playable, text-based interactive
+story** governed by a **search-based drama manager (DM)**. The DM treats the mystery
+as an abstract plot graph, watches what the player is doing each turn, and chooses an
+intervention (hint, glow, temporary denial, soft cause, or no-op) by running short
+sampling-based rollouts and scoring the resulting future states for
+**solvability, pacing, suspense, and (negative) manipulation** — the four success
+criteria from the project specification.
 
-### Architecture
+The full pipeline lives in **`main.ipynb`**; the notebook reads top-to-bottom with
+markdown headings for every step.
 
 ```
-Phase 1: Crime Backstory Generation
-        ↓  (CrimeDetails dataclass)
-Phase 2a: Character Generation (detective, criminal, 3 suspects)
-        ↓  (Character dataclasses)
-        ↓  (Character validation)
-Phase 2b: Clue Generation (4 genuine + 2 red herrings)
-        ↓  (Clue dataclasses)
-        ↓  (Clue validation)
-Phase 3: Meta Controller: Iterative Suspense Loop × 15 iterations
-        ↓  Each iteration:
-           Stage A prompt → detective's next action
-           Stage B prompt → obstacle that blocks success (suspense rises)
-           → Plot point validation / retry mechanism
-           → PlotPoint dataclass stored in StoryWorld
-        ↓  (StoryWorld with 15 PlotPoints)
-Phase 4: Consistency Check + Final Narrative Assembly
-        ↓  (fluent prose story)
+┌────────┐  NL action   ┌──────────────────────┐  fired nodes  ┌──────────────────┐
+│ Player ├─────────────▶│ Game Engine          ├──────────────▶│ Plot Graph (DAG) │
+└────────┘              │ (validate + step     │               │ pre/effect preds │
+                        │  trigger plot graph) │               └──────────────────┘
+                        └─────────┬────────────┘
+                                  │ world state
+                                  ▼
+                        ┌──────────────────────┐
+                        │ Drama Manager        │  ← scores: solvability, pacing,
+                        │ (rollouts + score)   │            suspense, anti-manipulation
+                        └─────────┬────────────┘
+                                  │ chosen intervention
+                                  ▼
+                        ┌──────────────────────┐
+                        │ Renderer (LLM prose) │ → narration shown to player
+                        └──────────────────────┘
 ```
 
-The suspense score rises monotonically from 0.15 → 0.98 across the 15 plot points, modeled after the theory in _Readers as Problem-Solvers in the Experience of Suspense_ (Gerrig) and adapted from _Creating Suspenseful Stories: Iterative Planning with LLMs_ (arXiv:2402.17119).
+---
+
+## How to run (instructional team)
+
+### 0. Prerequisites
+
+- Python 3.9 or newer
+- Jupyter Notebook / JupyterLab
+- A Google Gemini API key on a paid tier (the free tier's 20 requests/day quota is
+  not enough for a full Phase II run)
+
+### 1. Install dependencies
+
+The first code cell of the notebook runs `pip install -q -U google-genai`, so no
+manual install is needed. If you want to install ahead of time:
+
+```bash
+pip install -U google-genai jupyter
+```
+
+### 2. Provide your API key (no key is hardcoded)
+
+The notebook reads `GOOGLE_API_KEY` from your environment first; if it's missing, it
+prompts via `getpass`. Choose **either**:
+
+```bash
+export GOOGLE_API_KEY="paste-your-key-here"
+jupyter notebook main.ipynb
+```
+
+— **or** just launch the notebook and paste your key when the prompt appears.
+
+### 3. Run all cells
+
+`Kernel → Restart & Run All`. Cells are arranged so that running them in order
+populates a single `StoryWorld` object that flows through the whole pipeline.
+
+The interactive `play(world)` call at the bottom of Phase II is **commented out** by
+default so the notebook can run unattended. Uncomment it if you want to play the
+mystery yourself.
 
 ---
 
-## How to Run
+## Expected runtime and cost
 
-### Prerequisites
+Times measured on a typical laptop with `gemini-2.5-flash`:
 
-- Python 3.9+
-- Jupyter Notebook or JupyterLab
-- A Google Gemini API key (the notebook has one pre-loaded; replace if needed)
+| Section                                       | Wall-clock      |
+| --------------------------------------------- | --------------- |
+| Phase I — crime, characters, clues, countdown | ~30 sec         |
+| Phase I — 15 plot points + arc validation     | ~3–5 min        |
+| Phase I — consistency check + final narrative | ~30 sec         |
+| Phase II — plot-graph extraction              | ~5 sec          |
+| Phase II — game-world generation              | ~10 sec         |
+| Phase II — eval harness (4 auto-play runs)    | ~30–90 sec      |
+| Phase II — verbose demo + DM log dump         | ~20 sec         |
+| **Total (no interactive play)**               | **~5–8 min**    |
 
-### Steps
-
-1. **Install dependencies** (first notebook cell handles this automatically):
-
-   ```bash
-   pip install google-genai
-   ```
-
-2. **Open the notebook:**
-
-   ```bash
-   jupyter notebook main.ipynb
-   ```
-
-3. **Run all cells in order** (`Kernel → Restart & Run All`).
-
-   The notebook is self-contained. No command-line arguments are needed.
-
-### Expected Runtime
-
-| Phase                                   | Approx. time     |
-| --------------------------------------- | ---------------- |
-| Phase 1 (crime backstory)               | ~5 sec           |
-| Phase 2 (characters + clues)            | ~10 sec          |
-| Phase 3 (15 plot points)                | ~3–5 min         |
-| Phase 4 (consistency check + narrative) | ~30 sec          |
-| **Total**                               | **~4–6 minutes** |
-
-### Expected Cost
-
-- Model: `gemini-2.5-flash`
-- Approximate cost: ~15 cents
+API cost:
+- **~$0.15 – $0.25** per full notebook run on `gemini-2.5-flash`
+- Interactive `play()` adds ~$0.01 per turn (one parse call + one render call)
 
 ---
 
-## API Key
+## Code map (architecture ↔ cells)
 
-The `GOOGLE_API_KEY` is set in cell 2 of the notebook. To use your own key:
-
-1. Go to [Google AI Studio](https://aistudio.google.com/)
-2. Create an API key
-3. Replace the value in cell 2
-
-You will need to use a paid tier because the free tier only allows for 20 requests per day.
+| Architecture component                          | Where it lives in the notebook         |
+| ------------------------------------------------ | -------------------------------------- |
+| `StoryWorld`, `CrimeDetails`, `Character`, `Clue`, `PlotPoint` dataclasses | Data Structures section, Phase I |
+| Crime + character + clue + countdown generation  | Phase I sections                       |
+| 15-step iterative meta-controller                | "Phase 3: Iterative Loop / Meta Controller" |
+| Consistency check + final-narrative assembly     | "Phase 4: Validation + Final Narrative Assembly" |
+| **Phase II — Plot graph (`PlotNode`, extractor)**| Step 1                                 |
+| **Phase II — Game world (`Location`, `Item`, `GameWorld`)** | Step 2                       |
+| **Phase II — `WorldState`, predicate / effect functions** | Step 3                          |
+| **Phase II — `Action`, NL action parser**        | Step 4                                 |
+| **Phase II — `GameEngine` (validate, apply, trigger)** | Step 5                           |
+| **Phase II — Drama Manager (`Intervention`, `DMTrace`, rollouts, scoring, `decide`)** | Step 6 |
+| **Phase II — Intervention rendering (LLM prose)** | Step 7                                |
+| **Phase II — Game loop (`play`, verbose panels)** | Step 8                                |
+| **Phase II — Evaluation harness + walkthroughs** | Step 9                                 |
 
 ---
 
-## Crime Mystery Requirements Coverage
+## How to read the demo / video walkthrough output
 
-| Requirement                  | How it is addressed                                                     |
-| ---------------------------- | ----------------------------------------------------------------------- |
-| ≥ 15 plot points             | 15 plot points generated by the meta-controller loop                    |
-| Means / Motive / Opportunity | Each suspect generated with explicit MMO fields                         |
-| False alibis                 | At least 1 suspect has `alibi_is_lie=True` (for an unrelated secret)    |
-| Red herrings                 | 2 of 6 clues flagged `is_red_herring=True`                              |
-| Active criminal obstruction  | Suspense guidance from PP10 onward has criminal planting false evidence |
-| Hidden story revealed        | `CrimeDetails.backstory_summary` + bonus cell at end of notebook        |
-| Suspense arc                 | `suspense_score` rises 0.15 → 0.98 monotonically across all plot points |
+The verbose evaluation cell prints, per turn:
 
-## Example Outputs
+- `[USER ACTION]` — the parsed structured action
+- `[ENGINE]` — classification (`constituent` / `neutral` / `invalid` / `case_solved`)
+  and which plot-graph nodes fired
+- `[DRAMA MANAGER ACTION]` — top candidates considered, their rollout scores, and
+  the chosen intervention with a one-line reason
+- `[STATE]` — current location, clues discovered, plot-graph progress, intervention budget
+- `[NARRATION]` — the prose the player would see
 
-- Please see `Example Story.txt` for an example story
-- Please see `Example Story Plot Points.txt` for the plot points the system generated for this story
-- Please see `Example Story Annotated.md` for the story annotated with its plot points
+A full structured trace is also written to `dm_log.json` for the final video.
+
+---
+
+## Files in this repository
+
+| File | Purpose |
+|---|---|
+| `main.ipynb` | The complete Phase I + Phase II system. |
+| `README.md` | This file. |
+| `Example Story.txt` | Final narrative produced by Phase I. |
+| `Example Story Plot Points.txt` | The 15 structured plot points behind that story. |
+| `Example Story Annotated.md` | The narrative with each plot point inlined. |
+| `Phase II Projects for preview.pdf` | Course-provided Phase II spec. |
+| `Phase2AISVW.key` | Our team's Phase II proposal slides. |
+
+---
+
+## API-key handling note (for graders)
+
+Per the rubric guidance, **no API key is hardcoded**. The notebook reads `GOOGLE_API_KEY`
+from the environment first and falls back to a `getpass` prompt. The only code change
+required to grade the system is to set `GOOGLE_API_KEY` either as an env var or via the
+prompt.

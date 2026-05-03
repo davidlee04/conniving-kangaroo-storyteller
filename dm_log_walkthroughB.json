@@ -1,0 +1,1030 @@
+[
+  {
+    "turn": 1,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "noop",
+    "chosen_score": 1.9666666666666668,
+    "reason": "player has agency; story is ahead of pace",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.9666666666666668
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.9666666666666668
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.9666666666666668
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.9666666666666668
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.9666666666666668
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.9666666666666668
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.9666666666666668
+      },
+      {
+        "move": "hint(7)",
+        "score": 1.9666666666666668
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.9666666666666668
+      },
+      {
+        "move": "glow(Business Center Activity Log)",
+        "score": 1.9666666666666668
+      }
+    ],
+    "state_snapshot": {
+      "clues": [],
+      "executed": [
+        1
+      ],
+      "interventions": 0,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Hotel Business Center"
+    }
+  },
+  {
+    "turn": 2,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "hint(2)",
+    "chosen_score": 1.9166666666666667,
+    "reason": "player has only 0/8 clues; nudge clue 2",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.8666666666666667
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.8166666666666667
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.9166666666666667
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.8666666666666667
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.9166666666666667
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.8666666666666667
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.9166666666666667
+      },
+      {
+        "move": "hint(7)",
+        "score": 1.8666666666666667
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.9166666666666667
+      }
+    ],
+    "state_snapshot": {
+      "clues": [],
+      "executed": [
+        1
+      ],
+      "interventions": 0,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Grand Lobby"
+    }
+  },
+  {
+    "turn": 3,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "noop",
+    "chosen_score": 1.8666666666666667,
+    "reason": "player has agency; story is behind pace",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.8666666666666667
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.8666666666666667
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.8666666666666667
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.8666666666666667
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.8666666666666667
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.8666666666666667
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.8666666666666667
+      },
+      {
+        "move": "hint(7)",
+        "score": 1.8666666666666667
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.8666666666666667
+      },
+      {
+        "move": "glow(Business Center Activity Log)",
+        "score": 1.8666666666666667
+      }
+    ],
+    "state_snapshot": {
+      "clues": [],
+      "executed": [
+        1
+      ],
+      "interventions": 1,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Hotel Business Center"
+    }
+  },
+  {
+    "turn": 4,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "noop",
+    "chosen_score": 1.8166666666666669,
+    "reason": "player has agency; story is behind pace",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.8166666666666669
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.8166666666666669
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.8166666666666669
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.8166666666666669
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.8166666666666669
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.8166666666666669
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.8166666666666669
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.8166666666666669
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7
+      ],
+      "executed": [
+        1
+      ],
+      "interventions": 1,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Hotel Business Center"
+    }
+  },
+  {
+    "turn": 5,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "noop",
+    "chosen_score": 1.7666666666666666,
+    "reason": "player has agency; story is behind pace",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.7666666666666666
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.7666666666666666
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.7666666666666666
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.7666666666666666
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.7666666666666666
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.7666666666666666
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.7666666666666666
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.7666666666666666
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7
+      ],
+      "executed": [
+        1
+      ],
+      "interventions": 1,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Hotel Business Center"
+    }
+  },
+  {
+    "turn": 6,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "hint(1)",
+    "chosen_score": 1.8166666666666667,
+    "reason": "player has only 1/8 clues; nudge clue 1",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.7166666666666668
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.8166666666666667
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.7166666666666668
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.7166666666666668
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.7166666666666668
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.7166666666666668
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.7666666666666666
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.7166666666666668
+      },
+      {
+        "move": "cause(7)",
+        "score": 1.7833333333333334
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7
+      ],
+      "executed": [
+        1
+      ],
+      "interventions": 1,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Hotel Business Center"
+    }
+  },
+  {
+    "turn": 7,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "cause(7)",
+    "chosen_score": 1.8333333333333333,
+    "reason": "node 7 is one precondition away; fire it to keep momentum",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.6666666666666667
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.6666666666666667
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.6666666666666667
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.7666666666666666
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.6666666666666667
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.7166666666666668
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.7166666666666668
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.7666666666666666
+      },
+      {
+        "move": "cause(7)",
+        "score": 1.8333333333333333
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7
+      ],
+      "executed": [
+        1
+      ],
+      "interventions": 2,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Grand Lobby"
+    }
+  },
+  {
+    "turn": 8,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "noop",
+    "chosen_score": 1.6833333333333333,
+    "reason": "player has agency; story is behind pace",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.6833333333333333
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.6833333333333333
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.6833333333333333
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.6833333333333333
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.6833333333333333
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.6833333333333333
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.6833333333333333
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.6833333333333333
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7
+      ],
+      "executed": [
+        1,
+        7
+      ],
+      "interventions": 3,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Grand Ballroom"
+    }
+  },
+  {
+    "turn": 9,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "cause(8)",
+    "chosen_score": 1.7000000000000002,
+    "reason": "node 8 is one precondition away; fire it to keep momentum",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.6333333333333333
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.6333333333333333
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.6333333333333333
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.6333333333333333
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.6333333333333333
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.6333333333333333
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.6333333333333333
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.6333333333333333
+      },
+      {
+        "move": "cause(8)",
+        "score": 1.7000000000000002
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7
+      ],
+      "executed": [
+        1,
+        7
+      ],
+      "interventions": 3,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Grand Ballroom"
+    }
+  },
+  {
+    "turn": 10,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "hint(2)",
+    "chosen_score": 1.75,
+    "reason": "player has only 1/8 clues; nudge clue 2",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.7000000000000002
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.7000000000000002
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.75
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.75
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.75
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.6500000000000001
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.7000000000000002
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.7000000000000002
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7
+      ],
+      "executed": [
+        1,
+        7,
+        8
+      ],
+      "interventions": 4,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Grand Ballroom"
+    }
+  },
+  {
+    "turn": 11,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "noop",
+    "chosen_score": 1.7,
+    "reason": "player has agency; story is behind pace",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.7
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.7
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.7
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.7
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.7
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.65
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.7
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.7
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7
+      ],
+      "executed": [
+        1,
+        7,
+        8
+      ],
+      "interventions": 5,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Grand Ballroom"
+    }
+  },
+  {
+    "turn": 12,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "noop",
+    "chosen_score": 1.75,
+    "reason": "player has agency; story is behind pace",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.75
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.75
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.7
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.75
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.65
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.7
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.7
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.65
+      },
+      {
+        "move": "glow(Discarded Champagne Flute (Analyzed))",
+        "score": 1.75
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7
+      ],
+      "executed": [
+        1,
+        7,
+        8
+      ],
+      "interventions": 5,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Kitchen & Service Area"
+    }
+  },
+  {
+    "turn": 13,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "noop",
+    "chosen_score": 1.5999999999999999,
+    "reason": "player has agency; story is behind pace",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.5999999999999999
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.5499999999999998
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.5999999999999999
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.5999999999999999
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.5499999999999998
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.5999999999999999
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.5499999999999998
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.5999999999999999
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7
+      ],
+      "executed": [
+        1,
+        7,
+        8
+      ],
+      "interventions": 5,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Grand Ballroom"
+    }
+  },
+  {
+    "turn": 14,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "noop",
+    "chosen_score": 1.6,
+    "reason": "player has agency; story is behind pace",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.6
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.6
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.55
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.6
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.6
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.6
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.55
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.6
+      },
+      {
+        "move": "glow(Discarded Champagne Flute (Analyzed))",
+        "score": 1.6
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7
+      ],
+      "executed": [
+        1,
+        7,
+        8
+      ],
+      "interventions": 5,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Kitchen & Service Area"
+    }
+  },
+  {
+    "turn": 15,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "hint(2)",
+    "chosen_score": 1.5,
+    "reason": "player has only 1/8 clues; nudge clue 2",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.4500000000000002
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.4500000000000002
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.5
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.5
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.5
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.4500000000000002
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.4000000000000001
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.4500000000000002
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7
+      ],
+      "executed": [
+        1,
+        7,
+        8
+      ],
+      "interventions": 5,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Grand Ballroom"
+    }
+  },
+  {
+    "turn": 16,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "hint(4)",
+    "chosen_score": 1.55,
+    "reason": "player has only 1/8 clues; nudge clue 4",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.45
+      },
+      {
+        "move": "hint(1)",
+        "score": 1.5
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.45
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.5
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.55
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.45
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.45
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.55
+      },
+      {
+        "move": "glow(Discarded Champagne Flute (Analyzed))",
+        "score": 1.55
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7
+      ],
+      "executed": [
+        1,
+        7,
+        8
+      ],
+      "interventions": 6,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Kitchen & Service Area"
+    }
+  },
+  {
+    "turn": 17,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "hint(4)",
+    "chosen_score": 1.5,
+    "reason": "player has only 2/8 clues; nudge clue 4",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.45
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.45
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.45
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.5
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.45
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.4
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.5
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7,
+        1
+      ],
+      "executed": [
+        1,
+        7,
+        8
+      ],
+      "interventions": 7,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Kitchen & Service Area"
+    }
+  },
+  {
+    "turn": 18,
+    "classification": "neutral",
+    "fired_nodes": [],
+    "chosen": "noop",
+    "chosen_score": 1.6,
+    "reason": "player has agency; story is behind pace",
+    "candidates": [
+      {
+        "move": "noop",
+        "score": 1.6
+      },
+      {
+        "move": "hint(2)",
+        "score": 1.35
+      },
+      {
+        "move": "hint(3)",
+        "score": 1.35
+      },
+      {
+        "move": "hint(4)",
+        "score": 1.3
+      },
+      {
+        "move": "hint(5)",
+        "score": 1.3
+      },
+      {
+        "move": "hint(6)",
+        "score": 1.35
+      },
+      {
+        "move": "hint(8)",
+        "score": 1.3
+      },
+      {
+        "move": "glow(Security Camera Footage (Service Corridor))",
+        "score": 1.35
+      }
+    ],
+    "state_snapshot": {
+      "clues": [
+        7,
+        1
+      ],
+      "executed": [
+        1,
+        7,
+        8
+      ],
+      "interventions": 8,
+      "denied": [],
+      "temp_denied": {},
+      "location": "Service Corridor (Top Floor)"
+    }
+  }
+]
