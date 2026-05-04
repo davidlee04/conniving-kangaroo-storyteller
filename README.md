@@ -112,3 +112,6 @@ API cost:
 | **Phase II — Evaluation harness + walkthroughs**                                      | Step 9                                           |
 
 ---
+
+## Walkthroughs
+For text of the walkthroughs, please see the `dm_log_walkthrough*[A,B].json` files.
